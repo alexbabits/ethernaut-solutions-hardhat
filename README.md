@@ -1,10 +1,13 @@
-## Overview
-Ethernaut solutions using hardhat. `npm install` to install dependencies, then `npx hardhat init` to setup hardhat.
+## Overview and Setup
+- All 29 Ethernaut solutions with friendly explanations using hardhat.  
+- `contracts` contains the `.sol` files with the hack contracts. The target contracts are also included, but commented out. Some solutions can be done more easily through the console.
+- `scripts` contains the hardhat scripts to deploy and attack the target contracts. Some only require deployment.
+- `npm install` to install dependencies (hardhat, hardhat toolbox, dotenv, openzeppelin contracts). Then `npx hardhat init` to setup empty JavaScript hardhat project if needed.
 
 
 ### Hello Ethernaut - 00
 1. Goal: Just an introduction to the website getting familiar with the syntax and operations. 
-2. Methodology: Play with the consol, calling various properties of the contract and following the steps.
+2. Methodology: Play with the console, calling various properties of the contract and following the steps.
 3. Lessons: You can query things about the deployed vulnerable contract in the console. When you click 'get instance', it deploys your very own instance of that vulnerable/target smart contract to the sepolia network (If that's what your metamask is on). If you think you've solved a problem, `submit instance` button has the site check the status of your deployed vulnerable/target smart contract, and if it matches what the end result is, then you passed! 
 
 
@@ -69,7 +72,7 @@ Ethernaut solutions using hardhat. `npm install` to install dependencies, then `
 1. Goal: Become owner of `Delegation` contract.
 2. Methodology: 
     - Load interface of `Delgate` contract at the address of `Delegation` contract.
-    - Trigger fallback function which calls `delegatecall` funciton, which executes the code inside of `Delegate`, which will execute the function `pwn`, BUT it will update the state variable inside of `Delegation` and not `Delegate`.
+    - Trigger fallback function which calls `delegatecall` function, which executes the code inside of `Delegate`, which will execute the function `pwn`, BUT it will update the state variable inside of `Delegation` and not `Delegate`.
     - state variable 'owner' of `Delegation` is updated to us.
     
 3. Lessons:
